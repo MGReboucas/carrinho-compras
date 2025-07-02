@@ -1,3 +1,7 @@
+let totalProducts = 0;
+document.getElementById('lista-produtos').innerHTML = '';
+document.getElementById('valor-total').textContent = 'R$ 0';
+
 function adicionar() {
      //retrieve values, product name, quantity and values
      let getElement = document.getElementById.bind(document);
@@ -17,8 +21,13 @@ function adicionar() {
                               </section>`
 
      //update total value
+     totalProducts = totalProducts + price;
+     let totalPrice = getElement('valor-total');
+     totalPrice.textContent = `R$ ${totalProducts}`;
+     getElement('quantidade').value = '';
 }
 
 function limpar() {
+     //clean the products, price
 
 }
