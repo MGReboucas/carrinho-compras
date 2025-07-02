@@ -1,16 +1,20 @@
 function adicionar() {
-     //recuperar valores do nome deo produto, quantidade e valores
+     //retrieve values, product name, quantity and values
      let getElement = document.getElementById.bind(document);
+     
+     let product = getElement('produto').value;
+     let productName = product.split('-')[0];
+     let productValue = product.split('R$')[1];
+     let amount = getElement('quantidade');
 
-     let nomeProduto = getElement('produto');
-     let quantidade = getElement('quantidade');
+     alert(`O nome do produto é ${productName}, custa ${productValue} na quantidade ${amount.value}`)
 
-     alert(nomeProduto.value, quantidade.value);
-     //calcular o preço, o subtotal
+     //calculate price and subtotal
+     let price = amount.value * productValue;
+     alert(`O valor total do pedido é ${price}`)
+     //Add to Cart
 
-     //adicionar ao carrinho
-
-     //atualizar valor total
+     //update total value
 }
 
 function limpar() {
