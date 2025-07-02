@@ -7,12 +7,14 @@ function adicionar() {
      let productValue = product.split('R$')[1];
      let amount = getElement('quantidade');
 
-     alert(`O nome do produto é ${productName}, custa ${productValue} na quantidade ${amount.value}`)
-
      //calculate price and subtotal
      let price = amount.value * productValue;
-     alert(`O valor total do pedido é ${price}`)
+     
      //Add to Cart
+     let cartList = getElement('lista-produtos');
+     cartList.innerHTML = cartList.innerHTML + `<section class="carrinho__produtos__produto">
+                                   <span class="texto-azul"> ${amount.value}x </span> ${productName} <span class="texto-azul">R$${price} </span>
+                              </section>`
 
      //update total value
 }
